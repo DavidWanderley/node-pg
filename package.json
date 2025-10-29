@@ -1,0 +1,22 @@
+{
+  "name": "node_modulos",
+  "version": "1.0.0",
+  "description": "Projeto inicial rodando um teste com node e utilizando modulos",
+  "main": "modulo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelolustosa/node_modulos.git"
+  },
+  "author": "Angelo Lustosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelolustosa/node_modulos/issues"
+  },
+  "homepage": "https://github.com/angelolustosa/node_modulos#readme",
+  "dependencies": {
+    "chalk": "^5.6.2"
+  }
+}
