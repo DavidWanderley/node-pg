@@ -1,25 +1,29 @@
 const os = require('os');
-/* importa o modulo customizado */
-const { converterByteToMb } = require('./util/conversor.js');
 const chalk = require('chalk');
+/* importa o módulo customizado */
+const { converterByteToMb } = require('./util/conversor.js');
 
-
+// Coleta informações do sistema
 const tipo = os.type();
 const plataforma = os.platform();
-const memoria_livre = os.freemem() //em bytes
+const versao = os.release();
+const memoria_livre = os.freemem(); // em bytes
+const memoria_total = os.totalmem();
 
-console.log(chalk.blue.bold(`=== Informação do Sistema ===\n`));
+// Exibe cabeçalho
+console.log(chalk.blue.bold(`\n=== INFORMAÇÕES DO SISTEMA ===\n`));
 
+// Exibe dados do sistema
+console.log(`Plataforma: ${chalk.cyan(plataforma)}`);
+console.log(`Sistema: ${chalk.cyan(tipo)}`);
+console.log(`Versão: ${chalk.cyan(versao)}`);
+console.log(`Memória livre: ${chalk.green(converterByteToMb(memoria_livre))} MB`);
+console.log(`Memória total: ${chalk.yellow(converterByteToMb(memoria_total))} MB\n`);
 
-console.log(`Tipo: ${plataforma}`);
-console.log(`Tipo: ${tipo}`);
-console.log(`Tipo: ${os.release()}`);
-console.log(`Tipo: ${memoria_livre} bytes`);
-console.log(`Tipo: ${converterByteToMb(memoria_livre)} MB`);
-
-// ES2015 template literal
-log(`
-CPU: ${chalk.red('90%')}
-RAM: ${chalk.green('40%')}
+// Exemplo de painel de uso simulado
+console.log(chalk.magenta.bold('=== USO SIMULADO ==='));
+console.log(`
+CPU:  ${chalk.red('90%')}
+RAM:  ${chalk.green('40%')}
 DISK: ${chalk.yellow('70%')}
 `);
